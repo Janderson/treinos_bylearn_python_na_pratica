@@ -14,6 +14,8 @@ def main():
     ingredientes = [ingrediente1, ingrediente2]
 
     ingredienteX = input("Informe seu ingrediente X:")
+    
+    # Experimentar ==>2 listas de ingredientes (PS: expand)
     ingredientes.append(ingredienteX)
 
     receita_str = ", ".join(ingredientes)

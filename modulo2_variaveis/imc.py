@@ -5,12 +5,13 @@ def imc():
     autor = "SEU NOME AQUI"
     print(f"\n*** Cálculo do IMC v1.0 *** (por {autor})\n")
     
-    # ENTRADA    
-    altura = float(input("altura (cm): "))
+    # ENTRADA
+    altura = float(input("altura (cm): ")) / 100
     peso_kg = float(input("peso (kg): "))
+    # Experimentar ==> altura em Metros
 
     IMC = peso_kg / (altura * altura)
-    imc_fmt = IMC*100*100
+    imc_fmt = IMC
     print(f"IMC ==> {imc_fmt:.1f}")
 
 
