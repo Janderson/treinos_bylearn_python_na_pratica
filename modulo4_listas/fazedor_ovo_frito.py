@@ -11,6 +11,7 @@ def main():
 
     ingrediente1 = "OVO"
     ingrediente2 = "Azeite de Oliva"
+    
     ingredientes = [ingrediente1, ingrediente2]
 
     ingredienteX = input("Informe seu ingrediente X:")
@@ -18,6 +19,7 @@ def main():
     # Experimentar ==>2 listas de ingredientes (PS: expand)
     ingredientes.append(ingredienteX)
 
+    # Experimentar ==> Trocar ',' por '+'
     receita_str = ", ".join(ingredientes)
     print(f"ingredienteis => ({receita_str}) estão na panela")
     

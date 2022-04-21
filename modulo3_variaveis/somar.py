@@ -1,6 +1,5 @@
 def main():
-
-    autor = "SEU NOME AQUI"
+    autor = "Janderson Ferreira"
     print(f"\n*** Calculadora de Soma v1.0 *** (por {autor})\n")
 
     # ENTRADA    
@@ -9,6 +8,8 @@ def main():
 
     # PROCESSAMENTO
     soma = entrada_valor1 + entrada_valor2
+
+    
     saida_str = f"resultado da soma é: {soma}"
 
     # SAIDA

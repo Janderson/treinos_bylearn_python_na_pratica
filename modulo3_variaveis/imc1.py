@@ -1,0 +1,4 @@
+def imc():
+    pass
+
+imc()
