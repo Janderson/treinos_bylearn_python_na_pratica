@@ -9,8 +9,7 @@ def main():
     # PROCESSAMENTO
     soma = entrada_valor1 + entrada_valor2
 
-    
-    saida_str = f"resultado da soma é: {soma}"
+    saida_str = f"Resultado da soma é: {soma}"
 
     # SAIDA
     print(saida_str)
