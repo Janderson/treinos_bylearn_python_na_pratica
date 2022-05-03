@@ -1,4 +1,5 @@
 def main():
+    # Mostrar o titulo e o autor (tome propriedade do código)
     autor = "SEU NOME AQUI"
     print(f"\n*** Lista telefonica v2.0 *** (por {autor})\n")
 
