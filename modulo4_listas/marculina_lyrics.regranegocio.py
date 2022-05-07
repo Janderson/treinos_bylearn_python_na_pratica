@@ -1,5 +1,5 @@
 def main():
-    autor = "Janderson FFerreira @janderson.fferreira"
+    autor = "SEU NOME AQUI"
     print(f"\n*** Marculina Lyrics v1.0 *** (por {autor})\n")
 
     # criar string com multiplas linhas = marculina_lyrics com novas linhas
