@@ -76,8 +76,7 @@ def main():
     # juntar strofe1 + strofe2 colocar na variavel marculina_lyrics_frases
     # ==> SEU CÓDIGO AQUI
     
-    # Printar palabras 
-    print(f"\n\nFrases na Marculina (Strofe #1+#2):\n {estrofe_1_estrofe_2}")
+    # Printar palavras 
 
 
     #print(f"\n\n\n\nEu {autor} já sei trabalhar com listas no python! \o/")
