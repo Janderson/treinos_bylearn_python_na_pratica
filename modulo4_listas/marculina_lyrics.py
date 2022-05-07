@@ -28,27 +28,32 @@ E já levei um soco da minha Marculina"""
     # mostrar letra da musica
     print(marculina_lyrics)
 
+
     # quebrar marculina_lyrics em palavras (comando: da banana ...)
     palavras_marculina_lyrics = marculina_lyrics.split(" ")
+
 
     # identificar os "novas linhas" contra barras
     print(f"\n\nPalavras na Marculina:\n{palavras_marculina_lyrics}")
 
-    # remover as novas linhas do texto => (comando:replace)
-    marculina_lyrics_sem_nl = marculina_lyrics.replace("\n", " ")
-    # TESTE: experimente  fazer replace ao inves de espaço, sem nada ""
 
+    # remover as novas linhas do texto => (comando:replace)
+    # TESTE: experimente  fazer replace ao inves de espaço, sem nada ""
+    marculina_lyrics_sem_nl = marculina_lyrics.replace("\n", " ")
     marculina_palavras_sem_nl = marculina_lyrics_sem_nl.split(" ")
     print(f"\n\nPalavras na Marculina (Sem Nova Linha):\n{marculina_palavras_sem_nl}")
  
+
     # quebrar a marculina_lyrics em frases / estrofes
     marculina_lyrics_frases = marculina_lyrics.split("\n")
     print(f"\n\nMarculina Frase: {marculina_lyrics_frases}")
     print(f"tipo ==> {type(marculina_lyrics_frases)}")
 
+
     # pegar a primeira frase da música (conceito: uso de indice na lista)
     primeira_frase = marculina_lyrics_frases[0]
     print(f"\n\nPrimeira Frase: {primeira_frase}")
+
 
     # pegar a segunda frase da música (conceito: uso de indice na lista)
     segunda_frase = marculina_lyrics_frases[1]
@@ -87,9 +92,10 @@ As veis quase chorando me olhava e pruguntava:
 E onde tu botou o mango a cousa que eu mas gostava"""
 
 
-    # Quebrar em palavras marculina_lyrics_strofe_2_frases removendo os "nova_linha"
+    # Quebrar em FRASES marculina_lyrics_strofe_2_frases removendo os "nova_linha"
     marculina_lyrics_strofe_2_frases = marculina_lyrics_strofe_2.replace("\n", "").split("\n")
     print(f"\n\nPalavras na Marculina (Strofe #2):\n {marculina_lyrics_strofe_2_frases}")
+
 
     # juntar strofe1 + strofe2 colocar na variavel marculina_lyrics_frases
     marculina_lyrics_frases.extend(marculina_lyrics_strofe_2_frases)
