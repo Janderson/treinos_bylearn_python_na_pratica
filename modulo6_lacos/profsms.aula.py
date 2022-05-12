@@ -32,11 +32,17 @@ def main():
     # query professores (PODE COPIAR E COLAR PARA NÃO DAR DOR DE CABEÇA)
     query_professores = [["Rose", False], ["Roberto", False], ["Jose", True]]
 
-    # saber só os professores ausentes
+    # saber se o professor X, Y, Z estará ausente
     # compreensão de listas - list comprehension
-    so_ausentes = [
+    prof_esta_ausente = [
         esta_ausente for prof, esta_ausente in query_professores if prof == professor
     ]
+    print(f"prof {professor} esta ausente {prof_esta_ausente}")
+
+    nomes_dos_ausentes = [
+        prof for prof, esta_ausente in query_professores if esta_ausente
+    ]
+    print(f"nomes dos ausentes: {nomes_dos_ausentes}")
 
     # É o mesmo que o anterior, num formato mais padrão
     so_ausentes = []
