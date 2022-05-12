@@ -83,11 +83,11 @@ def main():
                         continue
 
                     # Print MSG gerado apartir da template na parte superior
-                        for aluno in alunos:
+                    for aluno in alunos:
                         msg_text = mensagem_template.format(
                             aluno=aluno, professor=professor
                         )
-                            print(f"Enviando SMS para {aluno}, msg ===> ({msg_text})")
+                        print(f"Enviando SMS para {aluno}, msg ===> ({msg_text})")
         print(f"fim da interacao ({loopid}), aguardando...")
         sleep(2)
 
