@@ -1,6 +1,5 @@
 ### Expectativa do cliente
-Tenho um sistema com cadastro de curso, professor e alunos, preciso de um sistema para envio de sms aos
-alunos quando um professor avisar que vai faltar.
+Tenho um sistema com cadastro de curso, professor e alunos, preciso de um sistema para envio de sms aos alunos quando um professor avisar que vai faltar.
 
 ### Funcionalidades:
     * Ler um "query" que vem de um cadastro de professores (No nosso caso ler de uma lista)
