@@ -1,3 +1,10 @@
+"""
+    Objetivo:
+        + Treino um pouco mais elaborado
+        + Script le um numero informado pelo JOGADOR 1
+        + Depois fica em loop até que o JOGADOR #2, acerte o número
+"""
+
 # import o comando getpass do módulo getpass
 from getpass import getpass
 
@@ -8,7 +15,7 @@ def main():
     print(f"\n*** Jogo de Adivinhação v1.0 *** (por {autor})\n")
 
     # Pege o número SECRETO informado pelo usuário
-    numero = getpass("[JOGADOR 1] -> diga número (que o mágico tentará acertar):")
+    numero = getpass("[JOGADOR #1] -> diga número (que o mágico tentará acertar):")
 
     # Salve o numero de tentativas
     tentativas = 0
