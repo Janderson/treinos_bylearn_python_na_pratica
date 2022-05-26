@@ -1,6 +1,6 @@
 from time import sleep
 
-DEBUG = True
+DEBUG = False
 
 QUERY_PROFESSORES = [
     {
@@ -23,12 +23,13 @@ QUERY_PROFESSORES = [
     }
 ]
 
+
 def main():
     autor = "Janderson"
     print(f"\n*** Prof SMS v1.0 *** (por {autor})\n")
 
     mensagem_template = (
-        "Ola {aluno}, seu professor {professor} " 
+        "Ola {aluno}, seu professor {professor} "
         "não comparecerá a aula hoje"
     )
 
@@ -43,24 +44,29 @@ def main():
 
             # Se estiver no modo de depuração mostrar nome do professor
             if DEBUG:
-                print(f"\n| -> Professor: {professor} {professor_item.get('ausente')}")
+                print(f"\n| -> Professor: {professor} "
+                      f"{professor_item.get('ausente')}")
 
             # Criar lógica condicional saber se alunos devem ser avisados
             # Variavel devo_avisar_alunos
             devo_avisar_alunos = professor_item.get("ausente")
 
-            # Criar logica condicional para saber se alunos ja foram avisados anteriormente
+            # Criar logica condicional para:
+            # saber se alunos ja foram avisados anteriormente
             # Variavel devo_avisar_alunos
             alunos_do_prof_ja_avisados = professor_item.get("avisado")
 
             # Criar condição para saber se deve enviar sms para professor
             # + lógica deve saber se alunos já foram avisados anteriormente
-            condicao_para_envio = devo_avisar_alunos and not alunos_do_prof_ja_avisados
+            condicao_para_envio = all([
+                devo_avisar_alunos,
+                not alunos_do_prof_ja_avisados])
 
             # Mostrar debug da condicao_para_envio
             if DEBUG:
                 print(
-                    f"| -> CONDIÇÃO({condicao_para_envio}): devo_avisar_alunos: {devo_avisar_alunos} "
+                    f"| -> CONDIÇÃO({condicao_para_envio}): "
+                    f"devo_avisar_alunos: {devo_avisar_alunos} "
                     f"alunos_do_prof_ja_avisados: {alunos_do_prof_ja_avisados}"
                 )
 
@@ -73,13 +79,14 @@ def main():
 
                     if DEBUG:
                         print(
-                            f"| ---> Avisando professorAluno: {professor} alunos: {aluno}"
+                            f"| ---> Avisando professorAluno: {professor} "
+                            f"alunos: {aluno}"
                         )
                     # montar template da msg
                     msg_text = mensagem_template.format(
                         aluno=aluno, professor=professor
                     )
-                    
+
                     # Executar envio -> mostrar print
                     print(f"Enviando SMS para {aluno}, msg ===> ({msg_text})")
 
