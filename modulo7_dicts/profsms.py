@@ -7,19 +7,19 @@ QUERY_PROFESSORES = [
         "professor": "Rose",
         "ausente": False,
         "alunos": ["Rosangela", "Rosane"],
-        "avisado": False
+        "alunos_avisados": False
     },
     {
         "professor": "Roberto",
         "ausente": False,
         "alunos": ["Roberval", "Rogerio", "Romario"],
-        "avisado": False
+        "alunos_avisados": False
     },
     {
         "professor": "Jose",
         "ausente": True,
         "alunos": ["João", "Joaquim"],
-        "avisado": False
+        "alunos_avisados": False
     }
 ]
 
@@ -30,13 +30,14 @@ def main():
 
     mensagem_template = (
         "Ola {aluno}, seu professor {professor} "
-        "não comparecerá a aula hoje"
+        "não comparecerá a aula hoje, desculpe o transtorno."
     )
 
     # + Criar uma variável 'repetir_loop' para controle de loops
     # + Criar um loop que executa x vezes
     repetir_loop = 5
     for loopid in range(repetir_loop):
+        print(f"|> INICIO INTERAÇÃO: {loopid}")
 
         # Buscar todos os professores da querie de professores
         for professor_item in QUERY_PROFESSORES:
@@ -54,7 +55,7 @@ def main():
             # Criar logica condicional para:
             # saber se alunos ja foram avisados anteriormente
             # Variavel alunos_do_prof_ja_avisados
-            alunos_do_prof_ja_avisados = professor_item.get("avisado")
+            alunos_do_prof_ja_avisados = professor_item.get("alunos_avisados")
 
             # Criar condição para saber se deve enviar sms para professor
             # + lógica deve saber se alunos já foram avisados anteriormente
@@ -73,7 +74,7 @@ def main():
             if condicao_para_envio:
                 # fazer UPDATE do professor a tabela de alunos avisados
                 # para não enviar novamente na próxima interação
-                professor_item["avisado"] = True
+                professor_item["alunos_avisados"] = True
 
                 # Criar loop para pegar alunos do professor
                 for aluno in professor_item.get("alunos"):
@@ -93,7 +94,7 @@ def main():
                     print(f"Enviando SMS para {aluno}, msg ===> ({msg_text})")
 
         # print de fim da iteração + sleep
-        print(f"fim da interacao ({loopid}), aguardando...")
+        print(f"|> FIM INTERAÇÃO: {loopid}, aguardando...")
         sleep(2)
 
 
