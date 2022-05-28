@@ -53,7 +53,7 @@ def main():
 
             # Criar logica condicional para:
             # saber se alunos ja foram avisados anteriormente
-            # Variavel devo_avisar_alunos
+            # Variavel alunos_do_prof_ja_avisados
             alunos_do_prof_ja_avisados = professor_item.get("avisado")
 
             # Criar condição para saber se deve enviar sms para professor
@@ -62,7 +62,7 @@ def main():
                 devo_avisar_alunos,
                 not alunos_do_prof_ja_avisados])
 
-            # Mostrar debug da condicao_para_envio
+            # Mostrar debug (ou depuração) da condicao_para_envio
             if DEBUG:
                 print(
                     f"| -> CONDIÇÃO({condicao_para_envio}): "
@@ -71,7 +71,8 @@ def main():
                 )
 
             if condicao_para_envio:
-                # Adicionar professor a tabela de alunos avisados
+                # fazer UPDATE do professor a tabela de alunos avisados
+                # para não enviar novamente na próxima interação
                 professor_item["avisado"] = True
 
                 # Criar loop para pegar alunos do professor
@@ -82,7 +83,8 @@ def main():
                             f"| ---> Avisando professorAluno: {professor} "
                             f"alunos: {aluno}"
                         )
-                    # montar template da msg
+                    # montar template da msg, mudando nome do professor e nome do aluno
+                    # comando: format
                     msg_text = mensagem_template.format(
                         aluno=aluno, professor=professor
                     )
